@@ -1,45 +1,51 @@
 (function(){
-	angular.module('GymGoals', [])
+	angular.module('ShoppingList', [])
 		.controller('ListController',ListController);
 
 
 		function ListController(){
 
 			var vm = this;
+			this.name;
+			this.newItem;
+			this.quantity;
+			this.price;
 
-			this.newGoal;
-			this.start;
-			this.goalEnd;
-
-			this.goals = [
-				{goal:'Pushups',start:10, endGoal:30 },
-				{goal:'Situps',start:30, endGoal:100 },
-				{goal:'Track laps',start:10, endGoal:15 },
+			this.shoppingList = [
+				{item:'Computer',quantity:1, price:900 },
+				{item:'Chocolate',quantity:5, price:2 },
+				{item:'Bus tickets',quantity:20, price:2.75 },
 			];
-
-			this.addGoal = addGoal;
-			this.calculatePercentageChange = calculatePercentageChange
+			this.addItem = addItem;
+			this.calculateTotal = calculateTotal
 			
 
-			function addGoal(){
-				var newGoal = {};
-				newGoal.goal = this.newGoal;
-				newGoal.start = this.start;
-				newGoal.endGoal = this.goalEnd;
-				this.goals.push(newGoal);
+			function addItem(){
+				var shoppingItem = {};
+				shoppingItem.item = this.newItem;
+				shoppingItem.quantity = this.quantity;
+				shoppingItem.price = this.price;
+				console.log(shoppingItem);
+				this.shoppingList.push(shoppingItem);
 
-				this.newGoal = null;
-				this.start = null;
-				this.goalEnd = null;
-
-			}
-
-			function calculatePercentageChange(start, end){
-				var change = ((end-start) /start) *100;
-				return change;
+				this.newItem = null;
+				this.quantity = null;
+				this.price = null;
 
 			}
 
+			function calculateTotal(){
+				var total=0;
+				for(var i=0;i<this.shoppingList.length;i++){
+					var listItem = this.shoppingList[i];
+					var subTotal = listItem.quantity * listItem.price;
+					total += subTotal;
+				}
+				return total;
+
+			}
+
+		
 		}
 
 	})();

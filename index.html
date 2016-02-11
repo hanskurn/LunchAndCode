@@ -4,7 +4,7 @@
 		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 		<script src="app.js"></script>
-		<title>Gym Goals</title>
+		<title>Shopping List</title>
 	</head>
 	<style>
 
@@ -36,22 +36,24 @@
 		}
 	</style>
 
-	<body ng-app="GymGoals">
+	<body ng-app="ShoppingList">
 		<div ng-controller="ListController as ctlr">
 			<div class="blue_header">
 					
 					<div class="container">
-						<h3>#Gym Goals</h3>
+						<h3>{{ctlr.name}}</h3>
 					</div>
 
 			</div>
 			
-			<div class="container">
-					<div class="goal_container" ng-repeat="goalItem in ctlr.goals track by $index">
-						<h2>{{$index+1}}. {{goalItem.goal}}</h2>
-						<h3>{{goalItem.start}}</h3>
-						<h3>{{goalItem.endGoal}}</h3>
-						<h3>{{ctlr.calculatePercentageChange(goalItem.start, goalItem.endGoal) | number:0}}%</h3>
+			<div class="container">	
+					<div>
+					{{ctlr.calculateTotal() | currency:'$':2}}
+					</div>
+					<div class="goal_container" ng-repeat="shoppingItem in ctlr.shoppingList track by $index">
+						<h2>{{$index+1}}. {{shoppingItem.item}}</h2>
+						<div>{{shoppingItem.quantity}} X </div>
+						<div>{{shoppingItem.price | currency:'$':2}}</div>
 					</div>
 			</div>
 
@@ -61,19 +63,23 @@
 				<br/>
 				<div>
 						<form role="form">
+							 <div class="form-group col-md-12">
+							    <label for="email">Enter Name:</label>
+							    <input ng-model="ctlr.name" type="text" class="form-control" id="goal">
+							  </div>
 							  <div class="form-group col-md-12">
-							    <label for="email">Enter Goal:</label>
-							    <input ng-model="ctlr.newGoal" type="text" class="form-control" id="goal">
+							    <label for="email">Enter Item:</label>
+							    <input ng-model="ctlr.newItem" type="text" class="form-control" id="goal">
 							  </div>
 							  <div class="form-group col-md-6">
-							    <label for="pwd">Goal Start:</label>
-							    <input ng-model="ctlr.start" type="number" class="form-control" id="gStart">
+							    <label for="pwd">Quantity:</label>
+							    <input ng-model="ctlr.quantity" type="number" class="form-control" id="gStart">
 							  </div>
 							   <div class="form-group col-md-6">
-							    <label for="pwd">Goal End:</label>
-							    <input ng-model="ctlr.goalEnd" type="number" class="form-control" id="gEnd">
+							    <label for="pwd">Price:</label>
+							    <input ng-model="ctlr.price" type="number" class="form-control" id="gEnd">
 							  </div>
-							  <button ng-click="ctlr.addGoal()" class="btn btn-default">Submit</button>
+							  <button ng-click="ctlr.addItem()" class="btn btn-default">Add</button>
 						</form>
 
 				</div>
