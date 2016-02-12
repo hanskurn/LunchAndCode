@@ -28,6 +28,7 @@
 				console.log(shoppingItem);
 				this.shoppingList.push(shoppingItem);
 
+				// Need to reset form values to nothing
 				this.newItem = null;
 				this.quantity = null;
 				this.price = null;

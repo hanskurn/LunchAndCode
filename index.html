@@ -49,8 +49,8 @@
 				
 				<div>	
 						
-						<div class="goal_container" ng-repeat="shoppingItem in ctlr.shoppingList track by $index">
-							<div class="col-md-4"><h3>{{$index+1}}. {{shoppingItem.item}}</h3></div>
+						<div class="goal_container" ng-repeat="shoppingItem in ctlr.shoppingList">
+							<div class="col-md-4"><h3>{{shoppingItem.item}}</h3></div>
 							<div class="col-md-4">{{shoppingItem.quantity}} X </div>
 							<div class="col-md-4">{{shoppingItem.price | currency:'$':2}}</div>
 						</div>

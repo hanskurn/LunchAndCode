@@ -1,0 +1,29 @@
+1. <h3>{{ctlr.name}} Shopping List</h3>
+
+2. fill in html
+
+3.  function addItem(){
+		var shoppingItem = {};
+		shoppingItem.item = this.newItem;
+		shoppingItem.quantity = this.quantity;
+		shoppingItem.price = this.price;
+		console.log(shoppingItem);
+		this.shoppingList.push(shoppingItem);
+
+		// Need to reset form values to nothing
+		this.newItem = null;
+		this.quantity = null;
+		this.price = null;
+
+	}
+
+4. function calculateTotal(){
+		var total=0;
+		for(var i=0;i<this.shoppingList.length;i++){
+			var listItem = this.shoppingList[i];
+			var subTotal = listItem.quantity * listItem.price;
+			total += subTotal;
+		}
+		return total;
+
+	}
