@@ -7,9 +7,10 @@
 		shoppingItem.item = this.newItem;
 		shoppingItem.quantity = this.quantity;
 		shoppingItem.price = this.price;
-		console.log(shoppingItem);
+		
 		this.shoppingList.push(shoppingItem);
-
+		
+		console.log(shoppingItem);
 		// Need to reset form values to nothing
 		this.newItem = null;
 		this.quantity = null;

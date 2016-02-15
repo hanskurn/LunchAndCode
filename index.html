@@ -42,6 +42,7 @@
 			<div ng-controller="ListController as ctlr">
 				<div class="blue_header">
 
+							<!-- Put the variable for your name here -->
 							<h3>{{ctlr.name}} Shopping List</h3>
 						
 
@@ -51,8 +52,12 @@
 						
 						<div class="goal_container" ng-repeat="shoppingItem in ctlr.shoppingList">
 							<div class="col-md-4"><h3>{{shoppingItem.item}}</h3></div>
-							<div class="col-md-4">{{shoppingItem.quantity}} X </div>
-							<div class="col-md-4">{{shoppingItem.price | currency:'$':2}}</div>
+
+							<!-- EXERCISE 1: Similar to the line above, fill in the fields for displaying the quantity and price -->
+							<div class="col-md-4"><!-- Put Price here --> {{shoppingItem.quantity}}</div>
+							<div> X </div>
+							<div class="col-md-4"><!-- Put Quantity here -->{{shoppingItem.price | currency:'$':2}}</div>
+
 						</div>
 
 						<div style="clear:both; text-right">
