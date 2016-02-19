@@ -1,6 +1,8 @@
 1. <h3>{{ctlr.name}} Shopping List</h3>
 
-2. fill in html
+2. <div class="col-md-3"><!-- Put Price here --> {{shoppingItem.quantity}}</div>
+	<div class="col-md-3"> X </div>
+	<div class="col-md-3"><!-- Put Quantity here -->{{shoppingItem.price | currency:'$':2}}</div>
 
 3.  function addItem(){
 		var shoppingItem = {};
