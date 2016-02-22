@@ -1,99 +1,74 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-		<script src="app.js"></script>
-		<title>Shopping List</title>
-	</head>
-	<style>
+<head>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+	<link href="styles/styles.css" rel="stylesheet" type="text/css" />
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<script src="app.js"></script>
+	<title>Shopping List</title>
+</head>
 
-		body
-		{
-			margin:0;
-			padding:0;
-			color:#999;
-			font-family: "Georgia", SERIF;
-		}
-		.blue_header
-		{
-			background-color:#002776;
-			border-bottom:5px solid #93D301;
-			height:80px;
-		}
 
-		.blue_header h1, .blue_header h2, .blue_header h3
-		{
-			color:#fff;
-		}
-		h1,h2,h3,h4
-		{
-			font-weight:normal;
-		}
-		.goal_container
-		{
-			border-bottom:1px solid #DAE2E5;
-			clear:both;
-		}
-	</style>
-
-	<body ng-app="ShoppingList">
-		<div class="container col-md-4 col-md-offset-4">
-			<div ng-controller="ListController as ctlr">
+<body ng-app="ShoppingList">
+	<div ng-controller="ListController as ctlr" class="long1">
+		<div class="container col-md-4 col-md-offset-3 long">
+			
 				<div class="blue_header">
 
-							<!-- Put the variable for your name here -->
-							<h3>{{ctlr.name}} Shopping List</h3>
-						
+					<!-- Put the variable for your name here -->
+					<h3>{{ctlr.name}} Shopping List</h3>
+
 
 				</div>
-				
+
 				<div>	
-						
-						<div class="goal_container" ng-repeat="shoppingItem in ctlr.shoppingList">
-							<div class="col-md-3"><h3>{{shoppingItem.item}}</h3></div>
 
-							<!-- EXERCISE 1: Similar to the line above, fill in the fields for displaying the quantity and price -->
-							<div class="col-md-3"><!-- Put Price here --> {{shoppingItem.quantity}}</div>
-							<div class="col-md-3"> X </div>
-							<div class="col-md-3"><!-- Put Quantity here -->{{shoppingItem.price | currency:'$':2}}</div>
+					<div class="goal_container" ng-repeat="shoppingItem in ctlr.shoppingList">
+						<div class="col-md-3"><h3>{{shoppingItem.item}}</h3></div>
 
-						</div>
-
-						<div style="clear:both; text-align:right;">
-						<strong> Total : {{ctlr.calculateTotal() | currency:'$':2}}</strong>
-						</div>
-				</div>
-
-				<div>
-					
-					<br/>
-					<br/>
-					<div>
-							<form role="form">
-								 <div class="form-group col-md-12">
-								    <label for="email">Enter Name:</label>
-								    <input ng-model="ctlr.name" type="text" class="form-control" id="goal">
-								  </div>
-								  <div class="form-group col-md-12">
-								    <label for="email">Enter Item:</label>
-								    <input ng-model="ctlr.newItem" type="text" class="form-control" id="goal">
-								  </div>
-								  <div class="form-group col-md-6">
-								    <label for="pwd">Quantity:</label>
-								    <input ng-model="ctlr.quantity" type="number" class="form-control" id="gStart">
-								  </div>
-								   <div class="form-group col-md-6">
-								    <label for="pwd">Price:</label>
-								    <input ng-model="ctlr.price" type="number" class="form-control" id="gEnd">
-								  </div>
-								  <button ng-click="ctlr.addItem()" class="btn btn-default">Add</button>
-							</form>
+						<!-- EXERCISE 1: Similar to the line above, fill in the fields for displaying the quantity and price -->
+						<div class="col-md-3"><!-- Put Price here --> {{shoppingItem.quantity}}</div>
+						<div class="col-md-3"> X </div>
+						<div class="col-md-3"><!-- Put Quantity here -->{{shoppingItem.price | currency:'$':2}}</div>
 
 					</div>
+
+					<div style="clear:both; text-align:right;">
+						<strong> Total : {{ctlr.calculateTotal() | currency:'$':2}}</strong>
+					</div>
+				</div>
+		</div>
+
+	<div class="container col-md-2 left-col">
+			<div>
+
+				<br/>
+				<br/>
+				<div>
+					<form role="form">
+						<div class="form-group col-md-12">
+							<label for="email">Enter Name:</label>
+							<input ng-model="ctlr.name" type="text" class="form-control" id="goal">
+						</div>
+						<div class="form-group col-md-12">
+							<label for="email">Enter Item:</label>
+							<input ng-model="ctlr.newItem" type="text" class="form-control" id="goal">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="pwd">Quantity:</label>
+							<input ng-model="ctlr.quantity" type="number" class="form-control" id="gStart">
+						</div>
+						<div class="form-group col-md-6">
+							<label for="pwd">Price:</label>
+							<input ng-model="ctlr.price" type="number" class="form-control" id="gEnd">
+						</div>
+						<button ng-click="ctlr.addItem()" class="btn btn-default">Add</button>
+					</form>
+
 				</div>
 			</div>
-</div>
-	</body>
+		</div>
+	</div>
+</body>
 
 </html>

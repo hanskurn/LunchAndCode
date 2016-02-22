@@ -13,7 +13,7 @@
 
 			/** This is the list of data that will be initially shown in the view**/
 			this.shoppingList = [
-				{item:'Computer',quantity:1, price:900 },
+				{item:'Laptop',quantity:1, price:900 },
 				{item:'Chocolate',quantity:5, price:2 },
 				{item:'Bus tickets',quantity:20, price:2.75 },
 			];
