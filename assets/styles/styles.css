@@ -1,0 +1,66 @@
+
+
+		body,html
+		{
+			margin:0;
+			padding:0;
+			color:#999;
+			font-family: "Georgia", SERIF;
+			height:100%;
+			font-size:18px;
+
+		}
+		.blue_header
+		{
+			background-color:#002776;
+			border-bottom:5px solid #93D301;
+			height:80px;
+		}
+
+		.blue_header h1, .blue_header h2, .blue_header h3
+		{
+			color:#fff;
+		}
+		h1,h2,h3,h4
+		{
+			font-weight:normal;
+		}
+		.goal_container
+		{
+			border-bottom:1px solid #DAE2E5;
+			margin:20px;
+			clear:both;
+			overflow: auto;
+		}
+		.long1
+		{
+			height:100%
+		}
+		.long
+		{
+			height:90%;
+			border:1px solid #ccc;
+		}
+		.left-col
+		{
+			border:2px dashed #DAE2E5;
+			margin-left:20px;
+		}
+		.container
+		{
+			padding:0;
+			
+			
+		}
+
+		h3
+		{
+			margin:0;
+			padding:10px;
+		}
+
+		.goal_container
+		{
+			padding:15px 0;
+		}
+
