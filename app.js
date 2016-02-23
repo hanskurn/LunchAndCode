@@ -32,10 +32,7 @@
 				//This line creates an empty javascript object
 				var shoppingItem = {};
 
-				shoppingItem.item = this.newItem;
-				shoppingItem.quantity = this.quantity;
-				shoppingItem.price = this.price;
-				this.shoppingList.push(shoppingItem);
+				
 
 				//This function will print to the developer console the javascript object you just created. 
 				console.log(shoppingItem);
@@ -56,13 +53,7 @@
 				/** EXERCISE 3: Add logic for summing up the total cost of the shopping list here **/
 
 				//Make sure to initialize a variable that you will return after you have done the calculations
-				var total=0;
-				for(var i=0;i<this.shoppingList.length;i++){
-					var listItem = this.shoppingList[i];
-					var subTotal = listItem.quantity * listItem.price;
-					total += subTotal;
-				}
-				return total;
+				
 
 			}
 
